@@ -1,16 +1,11 @@
 const express = require('express')
 const fs = require('fs')
 const { get } = require('http')
-var bodyParser = require('body-parser');
 const product = require(__dirname + "/public/data.js");
 const app = express()
 const port = 8000
 
-// parse application/json 
-app.use(bodyParser.json());
 
-// parse application/x-www-form-urlencoded 
-app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static(__dirname + "/public"));
 
