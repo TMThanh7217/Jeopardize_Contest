@@ -2,6 +2,7 @@
   "name": "handlebars-staticfiles",
   "version": "1.0.0",
   "description": "",
+  "entry point": "index.js",
   "main": "index.js",
   "dependencies": {
     "express": "^4.17.1",
