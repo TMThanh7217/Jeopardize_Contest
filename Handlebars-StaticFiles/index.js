@@ -1,17 +1,32 @@
-var express = require('express');
-const { dirname } = require('path');
-var app = express();
+const express = require('express')
+const fs = require('fs')
+const { get } = require('http')
+var bodyParser = require('body-parser');
+const app = express()
+const port = 8000
 
-app.use(express.static(__dirname + '/public'));
+// parse application/json 
+app.use(bodyParser.json());
 
-app.get('/', function(req, res){
-    res.sendFile(__dirname + "/public/index.htm");    
+// parse application/x-www-form-urlencoded 
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(express.static(__dirname + "/public"));
+
+let exprHbs = require("express-handleBars");
+let hbs = exprHbs.create({
+  extname : "hbs",
+  defaultLayout : 'layout',
+  layoutsDir : __dirname + '/views/layouts/',
+  partialsDir : __dirname + '/views/partials/'
 });
+app.engine('hbs', hbs.engine);
+app.set('view engine', 'hbs');
 
-app.get('/index.htm', function(req, res){
-    res.sendFile(__dirname + "/public//index.htm");    
-});
+app.get('/', (req, res) => {
+  res.render('index');
+})
 
-app.listen(8080, function(){
-    console.log("Server listening on port 8080");
-});
+app.listen(port, () => {
+  console.log(`Example app listening at http://localhost:${port}`)
+})
