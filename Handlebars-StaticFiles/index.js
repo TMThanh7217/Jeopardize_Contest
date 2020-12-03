@@ -27,9 +27,34 @@ app.get('/', (req, res) => {
   res.render('index');
 })
 
+function getJarsAccount(salary) {
+  let contribution = [0.55, 0.1, 0.05]
+  let balance = []
+  for (let cond of contribution) {
+    balance.push((salary * cond).toFixed(2));
+  }
+  var jars = { necessity : balance[0], 
+              financial : balance[1],
+              give : balance[2],
+              education : balance[1],
+              saving : balance[1],
+              play : balance[1] }
+  return jars;
+}
+
 app.get('/:page', (req, res) => {
   let page = req.params.page;
-  res.render(page);
+  if (page == "task1") {
+    let salary = 0;
+    res.render(page, {jars: getJarsAccount(salary)})
+  }
+  else {
+    res.render(page);}
+})
+
+app.get('/task1/:salary', (req, res) => {
+  let salary = Number(req.params.salary);
+  res.render('task1', {jars: getJarsAccount(salary)});
 })
 
 app.listen(port, () => {
