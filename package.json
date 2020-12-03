@@ -6,16 +6,17 @@
   "dependencies": {
     "express": "^4.17.1",
     "express-handlebars": "^5.2.0",
+    "handlebars": "^4.7.6",
     "nodemon": "^2.0.6"
   },
   "devDependencies": {},
   "scripts": {
-    "start": "node ./Handlebars-StaticFiles/index.js",
+    "start": "node /index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Nhom 11: 18127130, 18127217",
   "license": "ISC",
   "engines": {
-    "node": "14.15.1"
+    "node": ">=14.15.1"
   }
 }
