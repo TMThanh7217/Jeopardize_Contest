@@ -27,6 +27,11 @@ app.get('/', (req, res) => {
   res.render('index');
 })
 
+app.get('/:page', (req, res) => {
+  let page = req.params.page;
+  res.render(page);
+})
+
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })
