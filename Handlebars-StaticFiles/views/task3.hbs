@@ -4,24 +4,23 @@
         <div class="row">
             <div class="col-md-2">
                 <ul class="list-group" id="categories">
-                    <li class="list-group-item"><a href="">Samsung</a></li>
-                    <li class="list-group-item"><a href="">Sony</a></li>
-                    <li class="list-group-item"><a href="">Panasonic</a></li>
+                    <li class="list-group-item"><a href="/task3/1">Samsung</a></li>
+                    <li class="list-group-item"><a href="/task3/2">Sony</a></li>
+                    <li class="list-group-item"><a href="/task3/3">Panasonic</a></li>
                 </ul>
             </div>
             <div class="col-md-10">
                 <div id="products" class="row list-group">
-                    <div class="item col-xs-4 col-lg-4" id="TIVI QLED SAMSUNG QA55Q7FAMKXXV">
+                    {{#each product}}
+                    <div class="item col-xs-4 col-lg-4" id={{this.title}}>
                         <div class="thumbnail">
-                            <img class="group list-group-image" src="/images/task3/smart-tv-4k-qled-q7f-01.jpg" alt="">
+                            <img class="group list-group-image" src="/images/{{this.imagePath}}"  alt="">
                             <div class="caption">
-                                <h4 class="group inner list-group-item-heading">TIVI QLED SAMSUNG QA55Q7FAMKXXV</h4>
-                                <p class="group inner list-group-item-text">Product description... Lorem ipsum dolor sit
-                                    amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
-                                    laoreet dolore magna aliquam erat volutpat.</p>
+                                <h4 class="group inner list-group-item-heading">{{this.title}}</h4>
+                                <p class="group inner list-group-item-text">{{this.description}}</p>
                                 <div class="row">
                                     <div class="col-xs-12 col-md-6">
-                                        <p class="lead">57,900,000 VNĐ</p>
+                                        <p class="lead">{{this.price}} VNĐ</p>
                                     </div>
                                     <div class="col-xs-12 col-md-6">
                                         <a class="btn btn-success" href="#">Add to cart</a>
@@ -29,112 +28,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="item col-xs-4 col-lg-4" id="INTERNET TIVI SONY 40 INCH KDL-40W650D">
-                        <div class="thumbnail">
-                            <img class="group list-group-image" src="/images/task3/tivi-lcd-sony-kdl-40w650d-01.jpg"
-                                alt="">
-                            <div class="caption">
-                                <h4 class="group inner list-group-item-heading">INTERNET TIVI SONY 40 INCH KDL-40W650D
-                                </h4>
-                                <p class="group inner list-group-item-text">Product description... Lorem ipsum dolor sit
-                                    amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
-                                    laoreet dolore magna aliquam erat volutpat.</p>
-                                <div class="row">
-                                    <div class="col-xs-12 col-md-6">
-                                        <p class="lead">9,900,000 VNĐ</p>
-                                    </div>
-                                    <div class="col-xs-12 col-md-6">
-                                        <a class="btn btn-success" href="#">Add to cart</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item col-xs-4 col-lg-4" id="TIVI LED PANASONIC 55 INCH TH-55DS630V">
-                        <div class="thumbnail">
-                            <img class="group list-group-image" src="/images/task3/tivi-panasonic-th-55ds630v.jpg"
-                                alt="">
-                            <div class="caption">
-                                <h4 class="group inner list-group-item-heading">TIVI LED PANASONIC 55 INCH TH-55DS630V
-                                </h4>
-                                <p class="group inner list-group-item-text">Product description... Lorem ipsum dolor sit
-                                    amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
-                                    laoreet dolore magna aliquam erat volutpat.</p>
-                                <div class="row">
-                                    <div class="col-xs-12 col-md-6">
-                                        <p class="lead">16,990,000 VNĐ</p>
-                                    </div>
-                                    <div class="col-xs-12 col-md-6">
-                                        <a class="btn btn-success" href="#">Add to cart</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item col-xs-4 col-lg-4" id="TIVI LED PANASONIC 40 INCH TH-40DS500V">
-                        <div class="thumbnail">
-                            <img class="group list-group-image" src="/images/task3/tivi-led-panasonic-th-40ds500v.jpg"
-                                alt="">
-                            <div class="caption">
-                                <h4 class="group inner list-group-item-heading">TIVI LED PANASONIC 40 INCH TH-40DS500V
-                                </h4>
-                                <p class="group inner list-group-item-text">Product description... Lorem ipsum dolor sit
-                                    amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
-                                    laoreet dolore magna aliquam erat volutpat.</p>
-                                <div class="row">
-                                    <div class="col-xs-12 col-md-6">
-                                        <p class="lead">7,990,000 VNĐ</p>
-                                    </div>
-                                    <div class="col-xs-12 col-md-6">
-                                        <a class="btn btn-success" href="#">Add to cart</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item col-xs-4 col-lg-4" id="ANDROID TIVI SONY 43 INCH KDL-43W800C">
-                        <div class="thumbnail">
-                            <img class="group list-group-image" src="/images/task3/tivi-lcd-sony-kdl-43w800c-vn3.jpg"
-                                alt="">
-                            <div class="caption">
-                                <h4 class="group inner list-group-item-heading">ANDROID TIVI SONY 43 INCH KDL-43W800C
-                                </h4>
-                                <p class="group inner list-group-item-text">Product description... Lorem ipsum dolor sit
-                                    amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
-                                    laoreet dolore magna aliquam erat volutpat.</p>
-                                <div class="row">
-                                    <div class="col-xs-12 col-md-6">
-                                        <p class="lead">13,400,000 VNĐ</p>
-                                    </div>
-                                    <div class="col-xs-12 col-md-6">
-                                        <a class="btn btn-success" href="#">Add to cart</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item col-xs-4 col-lg-4" id="TIVI LED PANASONIC 58 INCH TH-58DX700V">
-                        <div class="thumbnail">
-                            <img class="group list-group-image" src="/images/task3/tivi-led-panasonic-th-58dx700v.jpg"
-                                alt="">
-                            <div class="caption">
-                                <h4 class="group inner list-group-item-heading">TIVI LED PANASONIC 58 INCH TH-58DX700V
-                                </h4>
-                                <p class="group inner list-group-item-text">Product description... Lorem ipsum dolor sit
-                                    amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
-                                    laoreet dolore magna aliquam erat volutpat.</p>
-                                <div class="row">
-                                    <div class="col-xs-12 col-md-6">
-                                        <p class="lead">28,490,000 VNĐ</p>
-                                    </div>
-                                    <div class="col-xs-12 col-md-6">
-                                        <a class="btn btn-success" href="#">Add to cart</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    </div>{{/each }}
                 </div>
             </div>
         </div>

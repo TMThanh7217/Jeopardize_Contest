@@ -2,6 +2,7 @@ const express = require('express')
 const fs = require('fs')
 const { get } = require('http')
 var bodyParser = require('body-parser');
+const product = require(__dirname + "/public/data.js");
 const app = express()
 const port = 8000
 
@@ -48,6 +49,12 @@ app.get('/:page', (req, res) => {
     let salary = 0;
     res.render(page, {jars: getJarsAccount(salary)})
   }
+  else if (page == "task3") {
+    console.log(product);
+
+    console.log("Object: " + product.categories[0] + product.products[0]);
+    res.render(page, {product: product.products});
+  }
   else {
     res.render(page);}
 })
@@ -56,6 +63,17 @@ app.get('/task1/:salary', (req, res) => {
   let salary = Number(req.params.salary);
   res.render('task1', {jars: getJarsAccount(salary)});
 })
+
+app.get('/task3/:category', (req, res) => {
+  let cate = req.params.category;
+  let list = [];
+  for (let prod of product.products) {
+    if (prod.category == cate) {
+      list.push(prod);
+    }
+  }
+  res.render('task3', {product: list});
+});
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
