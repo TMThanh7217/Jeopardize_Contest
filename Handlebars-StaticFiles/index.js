@@ -50,6 +50,9 @@ app.get('/:page', (req, res) => {
     console.log("Object: " + product.categories[0] + product.products[0]);
     res.render(page, {product: product.products});
   }
+  else if (page == "task2") {
+    res.render(page, {quote : product.quote[0]})
+  }
   else {
     res.render(page);}
 })
@@ -69,6 +72,17 @@ app.get('/task3/:category', (req, res) => {
   }
   res.render('task3', {product: list});
 });
+
+app.get('/task2/:emo', (req, res) => {
+  let emo = req.params.emo;
+  let quote = product.quote[0];
+  for(let e of product.quote){
+    console.log(e);
+    if (e.title == emo)
+      quote = e;
+  }
+  res.render('task2', {quote});
+})
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
