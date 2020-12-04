@@ -3,7 +3,7 @@ const fs = require('fs')
 const { get } = require('http')
 const product = require(__dirname + "/public/data.js");
 const app = express()
-const port = 8000 || process.env.PORT;
+const port = process.env.PORT || 8000;
 
 
 
