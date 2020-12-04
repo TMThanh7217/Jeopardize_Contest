@@ -9,7 +9,7 @@ const port = 8000
 
 app.use(express.static(__dirname + "/public"));
 
-let exprHbs = require("express-handleBars");
+let exprHbs = require("express-handlebars");
 let hbs = exprHbs.create({
   extname : "hbs",
   defaultLayout : 'layout',
